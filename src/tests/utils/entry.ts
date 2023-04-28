@@ -5,58 +5,58 @@ import { Dirent, Stats } from '@nodelib/fs.macchiato';
 import type { Entry } from '../../types';
 
 class EntryBuilder {
-	private _isFile: boolean = true;
-	private _isDirectory: boolean = false;
-	private _isSymbolicLink: boolean = false;
+	#isFile: boolean = true;
+	#isDirectory: boolean = false;
+	#isSymbolicLink: boolean = false;
 
-	private readonly _entry: Entry = {
+	readonly #entry: Entry = {
 		name: '',
 		path: '',
 		dirent: new Dirent(),
 	};
 
 	public path(filepath: string): this {
-		this._entry.name = path.basename(filepath);
-		this._entry.path = filepath;
+		this.#entry.name = path.basename(filepath);
+		this.#entry.path = filepath;
 
 		return this;
 	}
 
 	public file(): this {
-		this._isFile = true;
-		this._isDirectory = false;
+		this.#isFile = true;
+		this.#isDirectory = false;
 
 		return this;
 	}
 
 	public directory(): this {
-		this._isDirectory = true;
-		this._isFile = false;
+		this.#isDirectory = true;
+		this.#isFile = false;
 
 		return this;
 	}
 
 	public symlink(): this {
-		this._isSymbolicLink = true;
+		this.#isSymbolicLink = true;
 
 		return this;
 	}
 
 	public stats(): this {
-		this._entry.stats = new Stats();
+		this.#entry.stats = new Stats();
 
 		return this;
 	}
 
 	public build(): Entry {
-		this._entry.dirent = new Dirent({
-			name: this._entry.name,
-			isFile: this._isFile,
-			isDirectory: this._isDirectory,
-			isSymbolicLink: this._isSymbolicLink,
+		this.#entry.dirent = new Dirent({
+			name: this.#entry.name,
+			isFile: this.#isFile,
+			isDirectory: this.#isDirectory,
+			isSymbolicLink: this.#isSymbolicLink,
 		});
 
-		return this._entry;
+		return this.#entry;
 	}
 }
 

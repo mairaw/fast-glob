@@ -12,10 +12,12 @@ type GlobImplFunction = (...args: any[]) => ReturnType<typeof fastGlobCurrent.st
 type GlobOptions = fastGlobCurrent.Options;
 
 class Glob {
-	private readonly _options: fastGlobCurrent.Options;
+	readonly #pattern: string;
+	readonly #options: GlobOptions;
 
-	constructor(private readonly _pattern: string, options: fastGlobCurrent.Options) {
-		this._options = {
+	constructor(pattern: string, options: GlobOptions) {
+		this.#pattern = pattern;
+		this.#options = {
 			unique: false,
 			followSymbolicLinks: false,
 			...options,
@@ -25,16 +27,16 @@ class Glob {
 	public async measurePreviousVersion(): Promise<void> {
 		const glob = await utils.importAndMeasure(utils.importPreviousFastGlob);
 
-		await this._measure(() => glob.stream(this._pattern, this._options));
+		await this.#measure(() => glob.stream(this.#pattern, this.#options));
 	}
 
 	public async measureCurrentVersion(): Promise<void> {
 		const glob = await utils.importAndMeasure(utils.importCurrentFastGlob);
 
-		await this._measure(() => glob.stream(this._pattern, this._options));
+		await this.#measure(() => glob.stream(this.#pattern, this.#options));
 	}
 
-	private async _measure(function_: GlobImplFunction): Promise<void> {
+	async #measure(function_: GlobImplFunction): Promise<void> {
 		const entries: string[] = [];
 
 		const timeStart = utils.timeStart();
