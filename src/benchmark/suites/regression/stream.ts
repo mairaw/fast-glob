@@ -87,7 +87,7 @@ class Glob {
 		}
 
 		default: {
-			throw new TypeError(`Unknown glob implementation: ${impl}`);
+			throw new TypeError('Unknown glob implementation.');
 		}
 	}
 })();
