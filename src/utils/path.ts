@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-import { Pattern } from '../types';
+import type { Pattern } from '../types';
 
 const LEADING_DOT_SEGMENT_CHARACTERS_COUNT = 2; // ./ or .\\
 const UNESCAPED_GLOB_SYMBOLS_RE = /(\\?)([()*?[\]{|}]|^!|[!+@](?=\())/g;
