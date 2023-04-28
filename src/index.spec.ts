@@ -13,7 +13,6 @@ describe('Package', () => {
 		it('should throw an error when input values can not pass validation', () => {
 			const message = 'Patterns must be a string (non empty) or an array of strings';
 
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			assert.throws(() => fg.sync(invalidInputData), { message });
 			assert.throws(() => fg.sync(''), { message });
 		});
@@ -60,7 +59,6 @@ describe('Package', () => {
 		it('should throw an error when input values can not pass validation', async () => {
 			const message = 'Patterns must be a string (non empty) or an array of strings';
 
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			await assert.rejects(() => fg(invalidInputData), { message });
 			await assert.rejects(() => fg(''), { message });
 		});
@@ -107,7 +105,6 @@ describe('Package', () => {
 		it('should throw an error when input values can not pass validation', () => {
 			const message = 'Patterns must be a string (non empty) or an array of strings';
 
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			assert.throws(() => fg.stream(invalidInputData), { message });
 			assert.throws(() => fg.stream(''), { message });
 		});
@@ -168,7 +165,6 @@ describe('Package', () => {
 		it('should throw an error when input values can not pass validation', () => {
 			const message = 'Patterns must be a string (non empty) or an array of strings';
 
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			assert.throws(() => fg.generateTasks(invalidInputData), { message });
 			assert.throws(() => fg.generateTasks(''), { message });
 		});
