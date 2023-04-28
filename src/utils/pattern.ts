@@ -80,7 +80,7 @@ export function convertToPositivePattern(pattern: Pattern): Pattern {
 }
 
 export function convertToNegativePattern(pattern: Pattern): Pattern {
-	return '!' + pattern;
+	return `!${pattern}`;
 }
 
 export function isNegativePattern(pattern: Pattern): boolean {
@@ -134,7 +134,7 @@ export function hasGlobStar(pattern: Pattern): boolean {
 }
 
 export function endsWithSlashGlobStar(pattern: Pattern): boolean {
-	return pattern.endsWith('/' + GLOBSTAR);
+	return pattern.endsWith(`/${GLOBSTAR}`);
 }
 
 export function isAffectDepthOfReadingPattern(pattern: Pattern): boolean {
