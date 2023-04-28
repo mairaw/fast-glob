@@ -51,9 +51,9 @@ class Glob {
 			});
 		});
 
-		const count = entries.length;
-		const memory = utils.getMemory();
 		const time = utils.timeEnd(timeStart);
+		const memory = utils.getMemory();
+		const count = entries.length;
 
 		bencho.time('time', time);
 		bencho.memory('memory', memory);

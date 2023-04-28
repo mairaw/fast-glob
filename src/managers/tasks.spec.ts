@@ -66,8 +66,6 @@ describe('Managers → Task', () => {
 
 			const actual = manager.convertPatternsToTasks(['*', 'a/*', '../*.md'], ['*.md'], /* dynamic */ true);
 
-			console.dir(actual, { colors: true });
-
 			assert.deepStrictEqual(actual, expected);
 		});
 

@@ -63,11 +63,9 @@ class Glob {
 
 		const matches = await function_();
 
-		console.dir(matches, { colors: true });
-
-		const count = matches.length;
-		const memory = utils.getMemory();
 		const time = utils.timeEnd(timeStart);
+		const memory = utils.getMemory();
+		const count = matches.length;
 
 		bencho.time('time', time);
 		bencho.memory('memory', memory);

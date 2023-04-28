@@ -7,8 +7,6 @@ import * as utils from '../..';
 const CWD = process.cwd().replace(/\\/g, '/');
 const ROOT = path.parse(CWD).root;
 
-console.dir(ROOT, { colors: true });
-
 function getRootEntries(root: string, withBase: boolean = false): string[] {
 	let result = getRootEntriesWithFileTypes(root);
 
