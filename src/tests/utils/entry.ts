@@ -12,7 +12,7 @@ class EntryBuilder {
 	private readonly _entry: Entry = {
 		name: '',
 		path: '',
-		dirent: new Dirent()
+		dirent: new Dirent(),
 	};
 
 	public path(filepath: string): this {
@@ -53,7 +53,7 @@ class EntryBuilder {
 			name: this._entry.name,
 			isFile: this._isFile,
 			isDirectory: this._isDirectory,
-			isSymbolicLink: this._isSymbolicLink
+			isSymbolicLink: this._isSymbolicLink,
 		});
 
 		return this._entry;

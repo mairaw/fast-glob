@@ -152,14 +152,14 @@ export function expandPatternsWithBraceExpansion(patterns: Pattern[]): Pattern[]
 export function expandBraceExpansion(pattern: Pattern): Pattern[] {
 	return micromatch.braces(pattern, {
 		expand: true,
-		nodupes: true
+		nodupes: true,
 	});
 }
 
 export function getPatternParts(pattern: Pattern, options: MicromatchOptions): Pattern[] {
 	let { parts } = micromatch.scan(pattern, {
 		...options,
-		parts: true
+		parts: true,
 	});
 
 	/**

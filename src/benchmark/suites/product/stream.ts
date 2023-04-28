@@ -17,7 +17,7 @@ class Glob {
 
 		const stream = glob.globStream(this._pattern, {
 			cwd: this._cwd,
-			nodir: true
+			nodir: true,
 		});
 
 		const action = new Promise<string[]>((resolve, reject) => {
@@ -37,7 +37,7 @@ class Glob {
 		const stream = glob.stream(this._pattern, {
 			cwd: this._cwd,
 			unique: false,
-			followSymbolicLinks: false
+			followSymbolicLinks: false,
 		});
 
 		const action = new Promise<string[]>((resolve, reject) => {

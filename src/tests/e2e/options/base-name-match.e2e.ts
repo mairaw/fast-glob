@@ -6,8 +6,8 @@ runner.suite('Options MatchBase', {
 			pattern: '*.md',
 			options: {
 				cwd: 'fixtures',
-				baseNameMatch: true
-			}
-		}
-	]
+				baseNameMatch: true,
+			},
+		},
+	],
 });

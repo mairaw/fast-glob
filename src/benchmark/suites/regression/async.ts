@@ -16,7 +16,7 @@ class Glob {
 		this._options = {
 			unique: false,
 			followSymbolicLinks: false,
-			...options
+			...options,
 		};
 	}
 
@@ -58,7 +58,7 @@ class Glob {
 
 	const glob = new Glob(pattern, {
 		cwd,
-		...options
+		...options,
 	});
 
 	switch (impl) {

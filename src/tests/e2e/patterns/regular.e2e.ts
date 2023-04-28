@@ -35,8 +35,8 @@ runner.suite('Patterns Regular', {
 		{ pattern: 'fixtures/*/{nested,file.md}/*' },
 		{ pattern: 'fixtures/**/{nested,file.md}/*' },
 
-		{ pattern: './fixtures/*' }
-	]
+		{ pattern: './fixtures/*' },
+	],
 });
 
 runner.suite('Patterns Regular (cwd)', {
@@ -69,8 +69,8 @@ runner.suite('Patterns Regular (cwd)', {
 		{ pattern: '{first,second}/**/nested/**', options: { cwd: 'fixtures' } },
 
 		{ pattern: '*/{nested,file.md}/*', options: { cwd: 'fixtures' } },
-		{ pattern: '**/{nested,file.md}/*', options: { cwd: 'fixtures' } }
-	]
+		{ pattern: '**/{nested,file.md}/*', options: { cwd: 'fixtures' } },
+	],
 });
 
 runner.suite('Patterns Regular (ignore)', {
@@ -84,7 +84,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**', options: { ignore: ['**/*'] } },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['*'] } },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['**'] } },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['**/*'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['**/*'] } },
 		],
 
 		[
@@ -96,13 +96,13 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**', options: { ignore: ['fixtures/**/*'] }, issue: 47 },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['fixtures/*'] } },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['fixtures/**'] } },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['fixtures/**/*'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['fixtures/**/*'] } },
 		],
 
 		[
 			{ pattern: 'fixtures/*', options: { ignore: ['nested'] } },
 			{ pattern: 'fixtures/**', options: { ignore: ['nested'] }, issue: 47 },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['nested'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['nested'] } },
 		],
 
 		[
@@ -111,7 +111,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**', options: { ignore: ['*/nested'] }, issue: 47 },
 			{ pattern: 'fixtures/**', options: { ignore: ['**/nested'] }, issue: 47 },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['*/nested'] } },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested'] } },
 		],
 
 		[
@@ -120,7 +120,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**', options: { ignore: ['*/nested/*'] }, issue: 47 },
 			{ pattern: 'fixtures/**', options: { ignore: ['**/nested/*'] }, issue: 47 },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['*/nested/*'] } },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested/*'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested/*'] } },
 		],
 
 		[
@@ -129,7 +129,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**', options: { ignore: ['*/nested/**'] }, issue: 47 },
 			{ pattern: 'fixtures/**', options: { ignore: ['**/nested/**'] }, issue: 47 },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['*/nested/**'] } },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested/**'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested/**'] } },
 		],
 
 		[
@@ -138,7 +138,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**', options: { ignore: ['*/nested/**/*'] }, issue: 47 },
 			{ pattern: 'fixtures/**', options: { ignore: ['**/nested/**/*'] }, issue: 47 },
 			{ pattern: 'fixtures/**/*', options: { ignore: ['*/nested/**/*'] } },
-			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/**/*', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -154,7 +154,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/*/nested', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/*/nested', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/*/nested', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/*/nested', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/*/nested', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -170,7 +170,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/*/nested/*', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/*/nested/*', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/*/nested/*', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/*/nested/*', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/*/nested/*', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -186,7 +186,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/*/nested/**', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/*/nested/**', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/*/nested/**', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/*/nested/**', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/*/nested/**', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -202,7 +202,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/*/nested/**/*', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/*/nested/**/*', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/*/nested/**/*', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/*/nested/**/*', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/*/nested/**/*', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -218,7 +218,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**/nested/*', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/**/nested/*', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/**/nested/*', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/**/nested/*', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/**/nested/*', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -234,7 +234,7 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**/nested/**', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/**/nested/**', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/**/nested/**', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/**/nested/**', options: { ignore: ['**/nested/**/*'] } }
+			{ pattern: 'fixtures/**/nested/**', options: { ignore: ['**/nested/**/*'] } },
 		],
 
 		[
@@ -250,10 +250,10 @@ runner.suite('Patterns Regular (ignore)', {
 			{ pattern: 'fixtures/**/nested/**/*', options: { ignore: ['*/nested/**/*'] } },
 			{ pattern: 'fixtures/**/nested/**/*', options: { ignore: ['**/nested/*'] } },
 			{ pattern: 'fixtures/**/nested/**/*', options: { ignore: ['**/nested/**'] } },
-			{ pattern: 'fixtures/**/nested/**/*', options: { ignore: ['**/nested/**/*'] } }
-		]
-	]
-}
+			{ pattern: 'fixtures/**/nested/**/*', options: { ignore: ['**/nested/**/*'] } },
+		],
+	],
+},
 );
 
 runner.suite('Patterns Regular (ignore & cwd)', {
@@ -267,7 +267,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**', options: { ignore: ['**/*'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['*'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['**'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['**/*'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -279,13 +279,13 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**', options: { ignore: ['fixtures/**/*'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['fixtures/*'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['fixtures/**'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['fixtures/**/*'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['fixtures/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
 			{ pattern: '*', options: { ignore: ['nested'], cwd: 'fixtures' } },
 			{ pattern: '**', options: { ignore: ['nested'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['nested'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['nested'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -294,7 +294,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**', options: { ignore: ['*/nested'], cwd: 'fixtures' } },
 			{ pattern: '**', options: { ignore: ['**/nested'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['*/nested'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['**/nested'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['**/nested'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -303,7 +303,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**', options: { ignore: ['*/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '**', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['*/nested/*'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -312,7 +312,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**', options: { ignore: ['*/nested/**'], cwd: 'fixtures' } },
 			{ pattern: '**', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['*/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -321,7 +321,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '**', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '**/*', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
-			{ pattern: '**/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '**/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -337,7 +337,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '*/nested', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '*/nested', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '*/nested', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -353,7 +353,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '*/nested/*', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested/*', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested/*', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '*/nested/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '*/nested/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -369,7 +369,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '*/nested/**', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested/**', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested/**', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '*/nested/**', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '*/nested/**', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -385,7 +385,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '*/nested/**/*', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested/**/*', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '*/nested/**/*', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '*/nested/**/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '*/nested/**/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -401,7 +401,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**/nested/*', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '**/nested/*', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '**/nested/*', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '**/nested/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '**/nested/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -417,7 +417,7 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**/nested/**', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '**/nested/**', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '**/nested/**', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '**/nested/**', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
+			{ pattern: '**/nested/**', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
 		],
 
 		[
@@ -433,10 +433,10 @@ runner.suite('Patterns Regular (ignore & cwd)', {
 			{ pattern: '**/nested/**/*', options: { ignore: ['*/nested/**/*'], cwd: 'fixtures' } },
 			{ pattern: '**/nested/**/*', options: { ignore: ['**/nested/*'], cwd: 'fixtures' } },
 			{ pattern: '**/nested/**/*', options: { ignore: ['**/nested/**'], cwd: 'fixtures' } },
-			{ pattern: '**/nested/**/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } }
-		]
-	]
-}
+			{ pattern: '**/nested/**/*', options: { ignore: ['**/nested/**/*'], cwd: 'fixtures' } },
+		],
+	],
+},
 );
 
 runner.suite('Patterns Regular (relative)', {
@@ -445,20 +445,20 @@ runner.suite('Patterns Regular (relative)', {
 			{ pattern: './*' },
 			{ pattern: './*', options: { cwd: 'fixtures' } },
 			{ pattern: './**', options: { cwd: 'fixtures' } },
-			{ pattern: './**/*', options: { cwd: 'fixtures' } }
+			{ pattern: './**/*', options: { cwd: 'fixtures' } },
 		],
 
 		[
 			{ pattern: '../*', options: { cwd: 'fixtures/first' } },
 			{ pattern: '../**', options: { cwd: 'fixtures/first' }, issue: 47 },
-			{ pattern: '../../*', options: { cwd: 'fixtures/first/nested' } }
+			{ pattern: '../../*', options: { cwd: 'fixtures/first/nested' } },
 		],
 
 		[
 			{ pattern: '../{first,second}', options: { cwd: 'fixtures/first' } },
-			{ pattern: './../*', options: { cwd: 'fixtures/first' } }
-		]
-	]
+			{ pattern: './../*', options: { cwd: 'fixtures/first' } },
+		],
+	],
 });
 
 runner.suite('Patterns Regular (relative & ignore)', {
@@ -474,19 +474,19 @@ runner.suite('Patterns Regular (relative & ignore)', {
 		{ pattern: '../../*', options: { cwd: 'fixtures/first/nested', ignore: ['**'] } },
 
 		{ pattern: '../{first,second}', options: { cwd: 'fixtures/first', ignore: ['../first/**'] } },
-		{ pattern: '../{first,second}', options: { cwd: 'fixtures/first', ignore: ['**/first/**'] } }
-	]
+		{ pattern: '../{first,second}', options: { cwd: 'fixtures/first', ignore: ['**/first/**'] } },
+	],
 });
 
 runner.suite('Patterns Regular (negative group)', {
 	tests: [
-		{ pattern: '**/!(*.md)', options: { cwd: 'fixtures/first' } }
-	]
+		{ pattern: '**/!(*.md)', options: { cwd: 'fixtures/first' } },
+	],
 });
 
 runner.suite('Patterns Regular (segmented lists)', {
 	tests: [
 		{ pattern: '{book.xml,**/library/*/book.md}', options: { cwd: 'fixtures/third' }, issue: 365 },
-		{ pattern: '{book.xml,library/**/a/book.md}', options: { cwd: 'fixtures/third' } }
-	]
+		{ pattern: '{book.xml,library/**/a/book.md}', options: { cwd: 'fixtures/third' } },
+	],
 });

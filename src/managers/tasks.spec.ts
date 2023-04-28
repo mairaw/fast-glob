@@ -11,7 +11,7 @@ describe('Managers → Task', () => {
 			const settings = new Settings({ ignore: ['*.txt'] });
 
 			const expected = [
-				tests.task.builder().base('a').positive('a/*').negative('*.md').negative('*.txt').build()
+				tests.task.builder().base('a').positive('a/*').negative('*.md').negative('*.txt').build(),
 			];
 
 			const actual = manager.generate(['a/*', '!*.md'], settings);
@@ -24,7 +24,7 @@ describe('Managers → Task', () => {
 
 			const expected = [
 				tests.task.builder().base('a').static().positive('a/file.json').negative('b/*.md').negative('*.txt').build(),
-				tests.task.builder().base('b').positive('b/*').negative('b/*.md').negative('*.txt').build()
+				tests.task.builder().base('b').positive('b/*').negative('b/*.md').negative('*.txt').build(),
 			];
 
 			const actual = manager.generate(['a/file.json', 'b/*', '!b/*.md'], settings);
@@ -37,7 +37,7 @@ describe('Managers → Task', () => {
 
 			const expected = [
 				tests.task.builder().base('a').positive('a/file.json').negative('b/*.md').build(),
-				tests.task.builder().base('b').positive('b/*').negative('b/*.md').build()
+				tests.task.builder().base('b').positive('b/*').negative('b/*.md').build(),
 			];
 
 			const actual = manager.generate(['a/file.json', 'b/*', '!b/*.md'], settings);
@@ -49,7 +49,7 @@ describe('Managers → Task', () => {
 	describe('.convertPatternsToTasks', () => {
 		it('should return one task when positive patterns have a global pattern', () => {
 			const expected = [
-				tests.task.builder().base('.').positive('*').negative('*.md').build()
+				tests.task.builder().base('.').positive('*').negative('*.md').build(),
 			];
 
 			const actual = manager.convertPatternsToTasks(['*'], ['*.md'], /* dynamic */ true);
@@ -60,7 +60,7 @@ describe('Managers → Task', () => {
 		it('should return two tasks when one of patterns contains reference to the parent directory', () => {
 			const expected = [
 				tests.task.builder().base('..').positive('../*.md').negative('*.md').build(),
-				tests.task.builder().base('.').positive('*').positive('a/*').negative('*.md').build()
+				tests.task.builder().base('.').positive('*').positive('a/*').negative('*.md').build(),
 			];
 
 			const actual = manager.convertPatternsToTasks(['*', 'a/*', '../*.md'], ['*.md'], /* dynamic */ true);
@@ -73,7 +73,7 @@ describe('Managers → Task', () => {
 		it('should return two tasks when all patterns refers to the different base directories', () => {
 			const expected = [
 				tests.task.builder().base('a').positive('a/*').negative('b/*.md').build(),
-				tests.task.builder().base('b').positive('b/*').negative('b/*.md').build()
+				tests.task.builder().base('b').positive('b/*').negative('b/*.md').build(),
 			];
 
 			const actual = manager.convertPatternsToTasks(['a/*', 'b/*'], ['b/*.md'], /* dynamic */ true);
@@ -122,7 +122,7 @@ describe('Managers → Task', () => {
 		it('should return grouped patterns', () => {
 			const expected: PatternsGroup = {
 				'.': ['*'],
-				a: ['a/*']
+				a: ['a/*'],
 			};
 
 			const actual = manager.groupPatternsByBaseDirectory(['*', 'a/*']);
@@ -135,7 +135,7 @@ describe('Managers → Task', () => {
 		it('should return two tasks', () => {
 			const expected = [
 				tests.task.builder().base('a').positive('a/*').negative('b/*.md').build(),
-				tests.task.builder().base('b').positive('b/*').negative('b/*.md').build()
+				tests.task.builder().base('b').positive('b/*').negative('b/*.md').build(),
 			];
 
 			const actual = manager.convertPatternGroupsToTasks({ a: ['a/*'], b: ['b/*'] }, ['b/*.md'], /* dynamic */ true);
