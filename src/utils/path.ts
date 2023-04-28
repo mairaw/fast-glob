@@ -3,7 +3,7 @@ import * as path from 'path';
 import type { Pattern } from '../types';
 
 const LEADING_DOT_SEGMENT_CHARACTERS_COUNT = 2; // ./ or .\\
-const UNESCAPED_GLOB_SYMBOLS_RE = /(\\?)([()*?[\]{|}]|^!|[!+@](?=\())/g;
+const UNESCAPED_GLOB_SYMBOLS_RE = /(?<escape>\\?)(?<symbols>[()*?[\]{|}]|^!|[!+@](?=\())/g;
 
 /**
  * Designed to work only with simple paths: `dir\\file`.
@@ -17,7 +17,7 @@ export function makeAbsolute(cwd: string, filepath: string): string {
 }
 
 export function escape(pattern: Pattern): Pattern {
-	return pattern.replace(UNESCAPED_GLOB_SYMBOLS_RE, '\\$2');
+	return pattern.replace(UNESCAPED_GLOB_SYMBOLS_RE, '\\$<symbols>');
 }
 
 export function removeLeadingDotSegment(entry: string): string {
