@@ -14,11 +14,11 @@ const REGEX_GROUP_SYMBOLS_RE = /(?:^|[^!*+?@])\([^(]*\|[^|]*\)/;
 const GLOB_EXTENSION_SYMBOLS_RE = /[!*+?@]\([^(]*\)/;
 const BRACE_EXPANSION_SEPARATORS_RE = /,|\.\./;
 
-type PatternTypeOptions = {
+interface PatternTypeOptions {
 	braceExpansion?: boolean;
 	caseSensitiveMatch?: boolean;
 	extglob?: boolean;
-};
+}
 
 export function isStaticPattern(pattern: Pattern, options: PatternTypeOptions = {}): boolean {
 	return !isDynamicPattern(pattern, options);
