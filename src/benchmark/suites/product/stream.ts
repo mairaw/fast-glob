@@ -58,10 +58,10 @@ class Glob {
 		await this._measure(() => action);
 	}
 
-	private async _measure(func: GlobImplFunction): Promise<void> {
+	private async _measure(function_: GlobImplFunction): Promise<void> {
 		const timeStart = utils.timeStart();
 
-		const matches = await func();
+		const matches = await function_();
 
 		console.dir(matches, { colors: true });
 
