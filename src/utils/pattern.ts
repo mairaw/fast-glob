@@ -92,11 +92,11 @@ export function isPositivePattern(pattern: Pattern): boolean {
 }
 
 export function getNegativePatterns(patterns: Pattern[]): Pattern[] {
-	return patterns.filter(isNegativePattern);
+	return patterns.filter((pattern) => isNegativePattern(pattern));
 }
 
 export function getPositivePatterns(patterns: Pattern[]): Pattern[] {
-	return patterns.filter(isPositivePattern);
+	return patterns.filter((pattern) => isPositivePattern(pattern));
 }
 
 /**
@@ -118,7 +118,7 @@ export function getPatternsInsideCurrentDirectory(patterns: Pattern[]): Pattern[
  * getPatternsInsideCurrentDirectory(['./*', '*', 'a/*', '../*', './../*'])
  */
 export function getPatternsOutsideCurrentDirectory(patterns: Pattern[]): Pattern[] {
-	return patterns.filter(isPatternRelatedToParentDirectory);
+	return patterns.filter((pattern) => isPatternRelatedToParentDirectory(pattern));
 }
 
 export function isPatternRelatedToParentDirectory(pattern: Pattern): boolean {
