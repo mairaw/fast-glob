@@ -23,7 +23,7 @@ async function FastGlob(source: PatternInternal | PatternInternal[], options?: O
 
 	const result = await Promise.all(works);
 
-	return utils.array.flatten(result);
+	return utils.array.flatFirstLevel(result);
 }
 
 namespace FastGlob {
@@ -40,7 +40,7 @@ namespace FastGlob {
 
 		const works = getWorks(source, ProviderSync, options);
 
-		return utils.array.flatten(works);
+		return utils.array.flatFirstLevel(works);
 	}
 
 	export function stream(source: PatternInternal | PatternInternal[], options?: OptionsInternal): NodeJS.ReadableStream {
